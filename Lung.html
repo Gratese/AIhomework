@@ -1,0 +1,87 @@
+<html>
+<center>
+	<head>
+		<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> 
+			<link rel="stylesheet" href="css1.css">
+			<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+		<title>癌症影像辨識--Lung</title>
+		<style>
+			nav{float:left; width:10%; background:#FFFFAA;  font-size:20px}
+			article{float:center; width:100%; background:#AAAAFF}
+			
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div>
+				<div class="dropdown">
+								
+					<button class="btn btn-default dropdown-toggle" type="button"  data-toggle="dropdown">
+						<img src="img/icon1.png" width="85" height="85" title="MENU">
+						   <b style="font-size:24px">MENU </b><span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+					<li class="active"><a href="AI_page.html"><p>首頁</p></a></li>
+					<li class="active"><a href="#"><p style="font-size:20px">頭部</p></a></li>
+					<li class="active"><a href="#"><p style="font-size:20px">胸腔</p></a></li>
+					<li class="active"><a href="#"><p style="font-size:20px">腹部</p></a></li>
+					<li class="active"><a href="#"><p style="font-size:20px">四肢</p></a></li>
+					</ul>
+									
+				</div>	
+			</div>
+		</nav>
+		<article>
+				<table  align="center" class="font" border="0" width=60% height=1.5>
+					<tr>
+						<td align="center" width="100" height="100"><font size=6><b>肺部辨識</b></td>
+					</tr>
+				</table>
+		</article>
+		<hr color=black>
+		<!--圖片預覽-->
+		<form method="post" action="http://127.0.0.1:8001/image" enctype="multipart/form-data">
+		   <input type="file" name="lungImage" required>
+		   <img id="preview_progressbarTW_img" src="#" />
+		   <input type="submit" value="開始辨識" class="button-now" style="margin-top:15px;"/>
+
+		</form>
+
+		<script>
+		$("#progressbarTWInput").change(function(){
+		  readURL(this);
+		});
+
+		function readURL(input){
+		  if(input.files && input.files[0]){
+			var reader = new FileReader();
+			reader.onload = function (e) {
+			   $("#preview_progressbarTW_img").attr('src', e.target.result);
+			}
+			reader.readAsDataURL(input.files[0]);
+		  }
+		}
+		</script>
+	</body>
+	<footer>
+			<div>
+				<hr color=black>
+				<p style="text-align:center;"><a href="AI_page.html"><img src="img/home.png" width=6% ></a>
+				<address>
+                <a href="mailto:aaa@gmail.com"><img src="img/人物.png" width=6% style="vertical-align:middle"></a>
+				</address></p>
+                <strong>第五組</strong>
+				<p> 092214149  王昱翔</p>
+				<p> 092214109  黃煒翔 </p>
+				<p> 092214131  邱奕瑄</p>
+				<p> 092214136  陳咏涵</p>
+				<p> 092214137  陳杏宜</p>
+			</div>
+			</footer>
+</center>
+</html>

@@ -1,0 +1,14 @@
+stlye{
+	menu {position: fixed; right: 0; top: 50%; width: 8em; margin-top: -2.5em;}
+	nav{float:left; width:10%; background:#7D7DFF;  font-size:20px}
+	article{float:center; width:100%; background:#7D7DFF}
+	
+}
+body{
+	background-color:#ACD6FF;
+	font-family:微軟正黑體;
+	a:link  {color:#272727}
+	a:visited  {color:#666666}
+	a:hover  {text-decoration:underline;color:#6666CC}
+	
+}
